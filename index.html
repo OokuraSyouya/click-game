@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>クリックゲーム</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="container">
+
+  <h1>クリックゲーム</h1>
+
+  <p>スコア：<span id="score">0</span></p>
+<p id="comboText"></p>
+  <p>ハイスコア：<span id="highScore">0</span></p>
+<p>累計スコア：<span id="totalScore">0</span></p>
+<p>レベル：<span id="level">1</span></p>
+  <p>残り時間：<span id="time">10</span> 秒</p>
+
+ <div class="button-area">
+  <button id="clickButton">クリック！</button>
+  <img src="character.png" alt="キャラクター" class="character">
+</div>
+
+
+<div class="hp-area">
+  <div class="hp-bar-bg">
+    <div class="hp-bar" id="hpBar"></div>
+  </div>
+  <p id="hpText">HP: 100 / 100</p>
+</div>
+
+<!-- ★ リスタートボタン（最初は非表示） -->
+<button id="restartButton" style="display:none;">
+  リスタート
+</button>
+
+<button id="resetButton">
+  データをリセット
+</button>
+
+
+</div>
+
+
+  <!-- JavaScriptを読み込む（超重要） -->
+  <script src="script.js"></script>
+
+</body>
+</html>

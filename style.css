@@ -1,0 +1,155 @@
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+button {
+  font-size: 24px;
+  padding: 15px 30px;
+  margin: 15px 0;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* スマホでのダブルタップズームを防ぐ */
+* {
+  touch-action: manipulation;
+}
+
+/* ボタンにエフェクトを出すための準備 */
+button {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 波紋（リップル） */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(0, 170, 255, 0.6);
+  transform: scale(0);
+  animation: ripple-animation 600ms linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-animation {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+
+/* コンボ表示用 */
+.combo {
+  animation: combo-pop 300ms ease-out;
+}
+
+
+#comboText {
+  height: 32px;              /* ← 高さを固定 */
+  margin: 10px 0;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  color: #ff4081;
+}
+
+
+/* ボタンとイラストを横並び */
+.button-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px; /* ボタンとイラストの間隔 */
+  margin: 20px 0;
+}
+
+/* イラストのサイズ */
+.character {
+  width: 100px;
+  height: auto;
+}
+
+
+.button-area:active .character {
+  transform: scale(1.1);
+}
+
+// --- スマホの画像サイズ変更 ---
+@media (max-width: 600px) {
+  .character {
+    width: 50px;
+  }
+}
+
+
+
+/* HP表示エリア */
+.hp-area {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* HPバー背景 */
+.hp-bar-bg {
+  width: 120px;
+  height: 12px;
+  background-color: #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* HPバー本体 */
+.hp-bar {
+  height: 100%;
+  width: 100%;
+  background-color: #4caf50;
+  transition: width 0.2s ease;
+}
+
+
+
+@keyframes combo-pop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.4);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+
+
+/* 背景フラッシュ */
+.flash {
+  animation: flash-bg 200ms ease-out;
+}
+
+@keyframes flash-bg {
+  from {
+    background-color: rgba(255, 215, 0, 0.6);
+  }
+  to {
+    background-color: transparent;
+  }
+}
